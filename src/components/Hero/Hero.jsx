@@ -1,7 +1,7 @@
 import React from 'react';
-import './Footer.scss';
+import './Hero.scss';
 
-function Header() {
+function Hero() {
     return (
         <div>
 
@@ -9,4 +9,4 @@ function Header() {
     )
 }
 
-export default Header;
+export default Hero;

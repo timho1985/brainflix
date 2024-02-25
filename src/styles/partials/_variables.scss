@@ -1,0 +1,39 @@
+/* desktop */
+$desktop-breakpoint: 1280px;
+$desktop-margins: auto;
+$desktop-gutters: 1.5rem; // 24px
+$desktop-columns: 3.938rem; // 63px
+$desktop-padding-before-header: 3rem; // 48px
+$desktop-padding-after-header: 2.25rem; // 36px
+// $desktop-between-components: 2.25rem; // 36px
+$desktop-between-components: 6rem;
+
+/* tablet */
+$tablet-breakpoint: 768px;
+$tablet-margins: 2.25rem; // 36px
+$tablet-gutters: 1.5rem; // 24px
+$tablet-columns: auto;
+$tablet-padding-before-header: 3rem; // 48px
+$tablet-padding-after-header: 2.25rem; // 36px
+$tablet-between-components: 2.25rem; // 36px
+
+/* mobile */
+$mobile-breakpoint: 767px;
+$mobile-magins: 1rem; // 16px
+$mobile-gutters: 1rem; // 16px
+$mobile-columns: auto;
+$mobile-padding-before-header: 1.5rem; // 24px
+$mobile-padding-after-header: 1rem; // 16px
+$mobile-padding-between-components: 1rem; // 16px
+
+/* colors */
+$primary-brainflix-black: #323232;
+$primary-brainflix-blue: #0095FF;
+$primary-silver: #AFAFAF;
+$primary-white: #FFFFFF;
+
+$secondary-bandsite-darkblack: #000000;
+$primary-brainflix-darkblue: #0065AD;
+$secondary-mercury: #E1E1E1;
+$secondary-alabaster: #FAFAFA;
+
