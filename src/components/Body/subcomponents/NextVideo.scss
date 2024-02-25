@@ -1,0 +1,80 @@
+@use '../../../styles/partials/mixins' as *;
+@use '../../../styles/partials/variables' as *;
+
+.videos {
+    list-style-type: none;
+
+    &__header {
+        color: $secondary-mercury;
+        text-align: left;
+        padding: $mobile-padding-before-header
+                 $mobile-padding-between-components * 2
+                 $mobile-padding-after-header
+                 $mobile-padding-between-components * 2;
+
+        @include tablet {
+            padding: $mobile-padding-before-header
+                    $tablet-between-components * 2
+                    $mobile-padding-after-header
+                    $tablet-between-components * 2;
+        }
+
+        @include desktop {
+            font-size: large;
+            font-weight: 600;
+            padding: $mobile-padding-between-components;
+        }
+    }
+
+    &__list {
+        display: flex;
+        text-align: left;
+        padding: $mobile-padding-between-components;
+
+        @include tablet {
+            padding: $mobile-padding-between-components
+                    $tablet-between-components;
+        }
+
+        @include desktop {
+            // justify-content: space-between;
+            padding: $mobile-padding-between-components
+                    0
+                    0
+                    $mobile-padding-between-components;
+        }
+    }
+
+    &__img {
+        width: 200px;
+        height: auto;
+        padding: 0 $mobile-padding-between-components;
+
+        @include tablet {
+            padding: 0 $tablet-between-components;
+        }
+
+        @include desktop {
+            padding: 0;
+        }
+    }
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        
+        padding: 0 $mobile-padding-between-components;
+
+        @include tablet {
+            padding: 0 $tablet-between-components;
+        }
+
+        @include desktop {
+            padding: $mobile-padding-between-components
+                    0
+                    0
+                    $mobile-padding-between-components;
+        }
+    }
+}
