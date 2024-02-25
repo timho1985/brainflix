@@ -9,14 +9,7 @@ import views from '../../assets/icons/views.svg';
 import likes from '../../assets/icons/likes.svg';
 import head from '../../assets/images/Mohan-muruge.jpg';
 
-let defaultVideoId = "84e96018-4022-434e-80bf-000ce4cd12b8";
-
 function Body() {
-    // Find the video with the matching ID for detailed display
-    const defaultVideo = videoDetails.find(video => video.id === defaultVideoId);
-
-    // Filter out the defaultVideoId from the videoDetails for Next Video List
-    const otherVideos = videoDetails.filter(video => video.id !== defaultVideoId);
 
     const [selectedVideo, setSelectedVideo] = useState(videoDetails[0]);
     const [videos, setVideos] = useState(videoDetails);
@@ -84,16 +77,7 @@ function Body() {
                     </ul>
                 </div>
                 
-                <div className='container__right'>
-                    <h2 className='videos__header'>NEXT VIDEOS</h2>
-                    <ul className='videos'>
-                        {videos
-                        .filter((video) => video.id !== selectedVideo.id)
-                        .map((video) => (
-                            <NextVideo key={video.id} video={video} clickHandler={handleVideoClick}/>
-                        ))}
-                    </ul>
-                </div>
+                <NextVideo selectedVideo={selectedVideo} videos={videos} clickHandler={handleVideoClick}/>
             </div>
         </div>
     );
