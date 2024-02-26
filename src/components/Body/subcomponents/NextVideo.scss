@@ -4,6 +4,7 @@
 .videos-header {
     color: $primary-silver;
     text-align: left;
+    width: 100%;
     padding: $mobile-padding-before-header
              $mobile-padding-between-components * 2
              $mobile-padding-after-header
@@ -25,10 +26,12 @@
 
 .videos {
     list-style-type: none;
+    width: 100%;
 
     &__list {
         display: flex;
         text-align: left;
+        width: 100%;
         padding: $mobile-padding-between-components;
 
         @include tablet {

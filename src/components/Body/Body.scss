@@ -9,11 +9,6 @@
         padding: 0 $desktop-between-components;
     }
 }
-.container__right {
-    @include desktop {
-        // width: 20%;
-    }
-}
 
 .video {
     background-color: $primary-brainflix-black;
@@ -26,10 +21,6 @@
     @include desktop {
         padding: 0 $desktop-between-components;
     }
-}
-
-.videos__header {
-    color: $primary-silver;
 }
 
 .detail {
