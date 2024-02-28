@@ -1,0 +1,167 @@
+@use '../../../styles/partials/mixins' as *;
+@use '../../../styles/partials/variables' as *;
+
+.detail {
+    padding: $mobile-padding-between-components;
+    text-align: left;
+    width: 100%;
+
+    @include tablet {
+        padding: 0
+                $tablet-between-components
+                $tablet-between-components
+                $tablet-between-components;
+    }
+
+    @include desktop {
+        padding: $mobile-padding-between-components 0;
+    }
+
+    &__section {
+        display: flex;
+        gap: 10rem;
+
+        @include tablet {
+            gap: 0;
+            justify-content: space-between;
+        }
+    }
+
+    &__left {
+        @include tablet {
+            display: flex;
+            gap: 3rem;
+        }
+    }
+
+    &__right {
+        @include tablet {
+            display: flex;
+            gap: 3rem;
+        }
+    }
+
+    &__views {
+        color: $primary-silver;
+        display: flex;
+        margin-bottom: $mobile-padding-between-components;
+
+        @include tablet {
+            gap: 1rem;
+            margin-bottom: 0;
+        }
+
+    }
+
+    &__likes {
+        color: $primary-silver;
+        display: flex;
+        margin-bottom: $mobile-padding-between-components;
+
+        @include tablet {
+            gap: 1rem;
+            margin-bottom: 0;
+        }
+
+        @include desktop {
+            padding: 0 
+                    $mobile-padding-between-components
+                    0
+                    0;
+        }
+    }
+
+    &__title {
+        padding: $mobile-padding-before-header
+                $mobile-padding-between-components
+                $mobile-padding-after-header
+                $mobile-padding-between-components;
+
+        @include tablet {
+            padding: $tablet-padding-before-header
+                    0
+                    $tablet-padding-after-header
+                    0;
+        }
+
+        @include desktop {
+            padding: $tablet-padding-before-header
+                    0
+                    $tablet-padding-after-header
+                    0;
+        }
+    }
+
+    &__hr {
+        margin: $mobile-padding-between-components;
+
+        @include tablet {
+            margin: $mobile-padding-between-components
+                    0;
+        }
+
+        @include desktop {
+            margin: $mobile-padding-between-components
+                    0;
+        }
+    }
+
+    &__channel {
+        padding: 0 $mobile-padding-between-components;
+        margin-bottom: $mobile-padding-between-components;
+
+        @include tablet {
+            padding: 0;
+            margin-bottom: 0;
+        }
+
+        @include desktop {
+            padding: 0;
+        }
+    }
+
+    &__h3 {
+        padding: 0 $mobile-padding-between-components;
+        color: $primary-silver;
+        font-weight: 600;
+
+        @include tablet {
+            padding: 0;
+        }
+
+        @include desktop {
+            padding: 0;
+        }
+    }
+
+    &__description {
+        padding: $mobile-padding-between-components;
+
+        @include tablet {
+            padding: $mobile-padding-between-components
+                    0
+                    $tablet-between-components
+                    0;
+        }
+
+        @include desktop {
+            padding: $tablet-between-components 
+                    $mobile-padding-between-components
+                    $tablet-between-components
+                    0;
+        }
+    }
+
+    &__comment-counter {
+        text-align: left;
+        padding: $mobile-padding-between-components;
+
+        @include tablet {
+            padding: 0;
+        }
+
+        @include desktop {
+            padding: 0 0 $tablet-between-components 0;
+        }
+    }
+}

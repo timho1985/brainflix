@@ -1,4 +1,6 @@
 @use "./styles/partials/tyography" as *;
+@use './styles/partials/mixins' as *;
+
 * {
   margin: 0;
   padding: 0;
@@ -19,4 +21,17 @@ ul {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.mobile-hiden {
+  display: none;
+  @include tablet {
+      display: initial;
+  }
+}
+
+.tablet-hiden {
+  @include tablet {
+      display: none;
+  }
 }

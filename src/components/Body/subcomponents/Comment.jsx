@@ -1,21 +1,45 @@
 import React from 'react';
 import './Comment.scss';
 import {getDateStr} from '../../../utils/Util.js'
+import head from '../../../assets/images/Mohan-muruge.jpg';
 
-
-function Comments({comment}) {
+function Comments({selectedVideo}) {
     return (
-        <li className='comments__list'>
-            <hr className='comments__hr' />
-            <div className='comments__li-container'>
-                <div className='comments__li-img' alt={comment.name} ></div>
-                <div className='comments__li-main'>
-                    <div className='comments___li-name'>{comment.name}</div>
-                    <div className='comments__li-date'>{getDateStr(comment.timestamp)}</div>
-                    <div className='comments__li-comment'>{comment.comment}</div>
-                </div>
+        <div>
+            <div className='form'>
+                <img className="form__img" src={head} alt="Mohan Muruge"/>
+                <form className='form__container'>
+                    <label className='form__label' htmlFor="comment">JOIN THE CONVERSATION</label>
+                    <textarea
+                        className="form__input tablet-hiden"
+                        type="text"
+                        id="comment"
+                        name="userComment"
+                        placeholder="Add a new commment"
+                        required
+                    ></textarea>
+                    <input className="form__input mobile-hiden" type="text" id="comment" name="userComment" placeholder="Add a new commment" required/>
+                    <button className='form__button' type="submit">COMMENT</button>
+                </form>
             </div>
-        </li>
+
+            <ul className='comments'>
+                {selectedVideo.comments.map((comment) => (
+                    <li key={comment.id} className='comments__list'>
+                        <hr className='comments__hr' />
+                        <div className='comments__li-container'>
+                            <div className='comments__li-img' alt={comment.img} ></div>
+                            <div className='comments__li-main'>
+                                <div className='comments___li-name'>{comment.name}</div>
+                                <div className='comments__li-date'>{getDateStr(comment.timestamp)}</div>
+                                <div className='comments__li-comment'>{comment.comment}</div>
+                            </div>
+                        </div>
+                    </li>
+                ))}
+                <hr className='comments__hr' />
+            </ul>
+        </div>
     )
 }
 
