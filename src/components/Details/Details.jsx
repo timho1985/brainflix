@@ -1,8 +1,8 @@
 import React from 'react';
 import './Details.scss';
-import {getDateStr} from '../../../utils/Util.js';
-import views from '../../../assets/icons/views.svg';
-import likes from '../../../assets/icons/likes.svg';
+import {getDateStr} from '../../utils/Util.js';
+import views from '../../assets/icons/views.svg';
+import likes from '../../assets/icons/likes.svg';
 
 function Details({selectedVideo}) {
     return (

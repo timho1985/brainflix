@@ -1,7 +1,7 @@
 import React from 'react';
 import './Comment.scss';
-import {getDateStr} from '../../../utils/Util.js'
-import head from '../../../assets/images/Mohan-muruge.jpg';
+import {getDateStr} from '../../utils/Util.js'
+import head from '../../assets/images/Mohan-muruge.jpg';
 
 function Comments({selectedVideo}) {
     return (
