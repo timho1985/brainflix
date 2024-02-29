@@ -25,13 +25,20 @@ code {
 
 .mobile-hiden {
   display: none;
+
   @include tablet {
-      display: initial;
+    display: block;
   }
 }
 
 .tablet-hiden {
   @include tablet {
-      display: none;
+    display: none;
+  }
+}
+
+.desktop-hiden {
+  @include desktop {
+    display: none;
   }
 }

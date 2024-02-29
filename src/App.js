@@ -1,16 +1,19 @@
 import './App.css';
-import Header from './components/Header/Header';
-import Hero from './components/Hero/Hero';
-import Body from './components/Body/Body';
-import Footer from './components/Footer/Footer';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import HomePage from "./pages/HomePage/HomePage"
+import UploadPage from "./pages/UploadPage/UploadPage"
+import NotFoundPage from "./pages/NotFoundPage/NotFoundPage"
 
 function App() {
   return (
     <div className="App">
-      <Header />
-      <Hero />
-      <Body />
-      <Footer />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/upload" element={<UploadPage />} />
+          <Route path="*" element={<NotFoundPage />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }

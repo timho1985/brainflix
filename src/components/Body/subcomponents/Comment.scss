@@ -12,10 +12,7 @@
 
     @include desktop {
         border-right: 1px solid $primary-silver;
-        padding: 0 
-                $mobile-padding-between-components
-                $tablet-between-components
-                0;
+        padding: 0 $mobile-padding-between-components $tablet-between-components 0;
     }
 
     &__label {

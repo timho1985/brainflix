@@ -47,7 +47,6 @@
         }
 
         @include desktop {
-            // justify-content: space-between;
             padding: $mobile-padding-between-components
                     0
                     0
@@ -66,6 +65,7 @@
         }
 
         @include desktop {
+            object-fit:cover;
             padding: 0;
         }
     }
