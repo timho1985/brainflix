@@ -4,6 +4,7 @@ import {getDateStr} from '../../utils/Util.js';
 import views from '../../assets/icons/views.svg';
 import likes from '../../assets/icons/likes.svg';
 
+// Display detail information related to selected video
 function Details({selectedVideo}) {
     return (
         <div className="detail" key={selectedVideo.id}>

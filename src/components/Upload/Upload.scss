@@ -47,6 +47,7 @@
 
     &__img {
         width: 100%;
+        border-radius: 4px;
 
         @include desktop {
             padding-right: $tablet-between-components;

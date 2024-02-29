@@ -2,6 +2,7 @@ import React from 'react';
 import './Upload.scss';
 import preview from '../../assets/images/Upload-video-preview.jpg';
 
+// Display upload thumbnail and form
 function Upload() {
     return (
         <>

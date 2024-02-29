@@ -3,6 +3,7 @@ import './Comment.scss';
 import {getDateStr} from '../../utils/Util.js'
 import head from '../../assets/images/Mohan-muruge.jpg';
 
+// Display comment form and comment list for selected video
 function Comments({selectedVideo}) {
     return (
         <div>

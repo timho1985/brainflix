@@ -1,6 +1,7 @@
 import React from 'react';
 import './NextVideo.scss';
 
+// Display next video lists
 function NextVideo({selectedVideo, videos, clickHandler}) {
     return (
         <div className='container__right'>

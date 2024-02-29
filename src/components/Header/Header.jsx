@@ -4,6 +4,7 @@ import logo from "../../assets/logo/BrainFlix-logo.svg";
 import head from "../../assets/images/Mohan-muruge.jpg";
 import { useNavigate } from 'react-router-dom';
 
+// Display header
 function Header() {
     let navigate = useNavigate();
     function handleLogoClick() {
