@@ -7,11 +7,13 @@ import { useNavigate } from 'react-router-dom';
 // Display header
 function Header() {
     let navigate = useNavigate();
-    function handleLogoClick() {
+    function handleLogoClick(event) {
+        event.preventDefault();
         navigate("/");
     }
 
-    function handleButtonClick() {
+    function handleButtonClick(event) {
+        event.preventDefault();
         navigate("/upload");
     }
 

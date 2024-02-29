@@ -1,9 +1,18 @@
 import React from 'react';
 import './Upload.scss';
 import preview from '../../assets/images/Upload-video-preview.jpg';
+import { useNavigate } from 'react-router-dom';
 
 // Display upload thumbnail and form
 function Upload() {
+    let navigate = useNavigate();
+    async function handleSubmit(event) {
+        event.preventDefault();
+
+        alert("Video uploaded!");
+
+        navigate("/");
+    }
     return (
         <>
             <hr />
@@ -37,7 +46,7 @@ function Upload() {
                             ></textarea>
                             <hr className='mobile-hiden desktop-hiden' />
                             <div className='upload__buttons'>
-                                <button className="upload__button">PUBLICH</button>
+                                <button className="upload__button" onClick={handleSubmit}>PUBLICH</button>
                                 <button className="upload__button upload__button--white">CANCEL</button>
                             </div>
                         </form>
