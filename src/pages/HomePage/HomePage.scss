@@ -10,6 +10,16 @@
 
     &__left {
         border-right: 1px solid $primary-silver;
+
+        @include desktop {
+            width: 70%;
+        }
+    }
+
+    &__right {
+        @include desktop {
+            width: 30%;
+        }
     }
 }
 

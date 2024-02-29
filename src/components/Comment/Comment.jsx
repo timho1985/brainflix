@@ -4,7 +4,13 @@ import {getDateStr} from '../../utils/Util.js'
 import head from '../../assets/images/Mohan-muruge.jpg';
 
 // Display comment form and comment list for selected video
-function Comments({selectedVideo}) {
+function Comments({selectedVideoDetail}) {
+    const isEmpty = Object.keys(selectedVideoDetail).length === 0;
+
+    if (isEmpty) {
+        return <div>No details available.</div>;
+    }
+
     return (
         <div>
             <div className='form'>
@@ -25,7 +31,7 @@ function Comments({selectedVideo}) {
             </div>
 
             <ul className='comments'>
-                {selectedVideo.comments.map((comment) => (
+                {selectedVideoDetail.comments.map((comment) => (
                     <li key={comment.id} className='comments__list'>
                         <hr className='comments__hr' />
                         <div className='comments__li-container'>
