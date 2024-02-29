@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import "./HomePage.scss"
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import Header from '../../components/Header/Header';
 import Comments from '../../components/Comment/Comment.jsx';
 import NextVideo from '../../components/NextVideo/NextVideo.jsx';
