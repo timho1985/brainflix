@@ -1,0 +1,136 @@
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+
+.upload {
+    text-align: left;
+    width: 100%;
+    padding: $mobile-padding-between-components;
+
+    @include tablet {
+        padding: $tablet-between-components;
+    }
+
+    @include desktop {
+        padding: $tablet-between-components $desktop-between-components;
+    }
+
+    &__container {
+        @include desktop {
+            display: flex;
+            padding: $tablet-between-components 0;
+        }
+    }
+
+    &__left {
+        @include tablet {
+            width: 50%;
+        }
+
+        @include desktop {
+            width: 35%;
+        }
+    }
+
+    &__right {
+        @include desktop {
+            width: 65%;
+        }
+    }
+
+    &__header {
+        padding: $mobile-padding-before-header 0 $mobile-padding-after-header 0;
+
+        @include desktop {
+            padding: $tablet-between-components 0;
+        }
+    }
+
+    &__img {
+        width: 100%;
+        border-radius: 4px;
+
+        @include desktop {
+            padding-right: $tablet-between-components;
+        }
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__lable {
+        color: $primary-silver;
+        font-weight: 600;
+        padding: $mobile-padding-between-components 0;
+    }
+
+    &__input {
+        font-family: "AvenirNext LT Pro", Arial, Helvetica, sans-serif;
+        font-weight: 600;
+        width: 100%;
+        min-height: 2.25rem;
+        border-radius: 0.25rem;
+        padding: 0.75rem;
+        margin-bottom: 0.75rem;
+        color: $primary-brainflix-black;
+        background-color: $secondary-alabaster;
+        border: 1px solid $secondary-mercury;
+
+        // @include tablet {
+        //     min-height: 3rem;
+        //     padding: 1rem;
+        // }
+    }
+
+    &__textbox {
+        font-family: "AvenirNext LT Pro", Arial, Helvetica, sans-serif;
+        font-weight: 600;
+        resize: none;
+        width: 100%;
+        min-height: 4.5rem;
+        padding: 0.75rem;
+        margin-bottom: 0.75rem;
+        color: $primary-brainflix-black;
+        background-color: $secondary-alabaster;
+        border: 1px solid $secondary-mercury;
+        border-radius: 0.25rem;
+
+        @include tablet {
+            margin-bottom: $tablet-between-components;
+        }
+    }
+
+    &__buttons {
+        @include tablet {
+            width: 100%;
+            display: flex;
+            flex-direction: row-reverse;
+            margin-top: $tablet-between-components;
+        }
+    }
+
+    &__button {
+        font-weight: 600;
+        background-color: $primary-brainflix-blue;
+        color: $primary-white;
+        height: 2.5rem;
+        width: 100%;
+        border-radius: 0.25rem;
+        border: 0;
+        margin-bottom: $mobile-padding-between-components;
+        background-image: url("../../assets/icons/publish.svg");
+        background-repeat: no-repeat;
+        background-position: 1rem;
+
+        @include tablet {
+            width: 10rem;
+        }
+    }
+
+    &__button--white {
+        background-color: $primary-white;
+        color: $primary-brainflix-blue;
+        border: 0
+    }
+}

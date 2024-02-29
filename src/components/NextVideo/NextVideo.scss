@@ -1,5 +1,5 @@
-@use '../../../styles/partials/mixins' as *;
-@use '../../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
 
 .videos-header {
     color: $primary-silver;
@@ -12,21 +12,32 @@
 
     @include tablet {
         padding: $mobile-padding-before-header
-                $tablet-between-components * 2
+                $tablet-between-components
                 $mobile-padding-after-header
-                $tablet-between-components * 2;
+                $tablet-between-components;
     }
 
     @include desktop {
         font-size: large;
         font-weight: 600;
-        padding: $mobile-padding-between-components;
+        padding: $tablet-between-components
+                0
+                $mobile-padding-between-components
+                $mobile-padding-between-components;
     }
 }
 
 .videos {
     list-style-type: none;
     width: 100%;
+
+    @include tablet {
+        width: 65%;
+    }
+
+    @include desktop {
+        width: 100%;
+    }
 
     &__list {
         display: flex;
@@ -40,7 +51,6 @@
         }
 
         @include desktop {
-            // justify-content: space-between;
             padding: $mobile-padding-between-components
                     0
                     0
@@ -54,10 +64,13 @@
         padding: 0 $mobile-padding-between-components;
 
         @include tablet {
-            padding: 0 $tablet-between-components;
+            width: 10rem;
+            padding: 0;
         }
 
         @include desktop {
+            object-fit: cover;
+            width: 10rem;
             padding: 0;
         }
     }
@@ -74,10 +87,25 @@
         }
 
         @include desktop {
-            padding: $mobile-padding-between-components
+            padding: 0
                     0
                     0
                     $mobile-padding-between-components;
+        }
+    }
+
+    &__title {
+        @include tablet {
+            font-size: 1rem;
+        }
+        @include desktop {
+            font-size: 0.8rem;
+        }
+    }
+
+    &__channel {
+        @include desktop {
+            font-size: 0.8rem;
         }
     }
 }

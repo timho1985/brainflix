@@ -1,7 +1,10 @@
 @use "./styles/partials/tyography" as *;
+@use './styles/partials/mixins' as *;
+
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
@@ -18,4 +21,24 @@ ul {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.mobile-hiden {
+  display: none;
+
+  @include tablet {
+    display: block;
+  }
+}
+
+.tablet-hiden {
+  @include tablet {
+    display: none;
+  }
+}
+
+.desktop-hiden {
+  @include desktop {
+    display: none;
+  }
 }
