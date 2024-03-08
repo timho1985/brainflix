@@ -18,12 +18,9 @@ export function getDateStr(ts) {
 export class BrainflixApi {
     constructor() {
         this.apiKey = "fd39feb0-8a1e-4099-9352-8cd082450bae";
-        this.baseUrl = "https://unit-3-project-api-0a5620414506.herokuapp.com";
+        this.baseUrl = "http://localhost:5050";
         this.axios = axios.create({
-        baseURL: this.baseUrl,
-        params: {
-            api_key: this.apiKey,
-        },
+            baseURL: this.baseUrl,
         });
     }
 
@@ -45,12 +42,17 @@ export class BrainflixApi {
         }
     }
 
-    async postComment(id, comment) {
+    async postVideo(title, description) {
         try {
-            const response = await this.axios.post(`/videos/${id}/comments`, comment);
+            const postData = {
+                title: title,
+                description: description,
+            };
+            console.log(postData);
+            const response = await this.axios.post("/videos", postData);
             return response.data;
         } catch (error) {
-            throw new Error("Failed to post comment: " + error.message);
+            throw new Error("Failed to post videos: " + error.message);
         }
     }
 }
