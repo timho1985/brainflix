@@ -3,7 +3,7 @@ import './NextVideo.scss';
 import { Link } from 'react-router-dom';
 
 // Display next video lists
-function NextVideo({selectedVideoDetail, videos, clickHandler}) {
+function NextVideo({selectedVideoDetail, videos}) {
     const isEmpty = Object.keys(videos).length === 0;
 
     if (isEmpty) {
