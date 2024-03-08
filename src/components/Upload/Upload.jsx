@@ -1,16 +1,26 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import './Upload.scss';
 import preview from '../../assets/images/Upload-video-preview.jpg';
 import { useNavigate } from 'react-router-dom';
 
 // Display upload thumbnail and form
-function Upload() {
+function Upload({postVideoHandler}) {
+    const titleRef = useRef();
+    const descriptionRef = useRef();
     let navigate = useNavigate();
+
     async function handleSubmit(event) {
         event.preventDefault();
 
-        alert("Video uploaded!");
+        // Access input values from refs
+        const title = titleRef.current.value;
+        const description = descriptionRef.current.value;
+        console.log('Title:', title, 'Description:', description);
+        postVideoHandler(title, description);
 
+        alert("Video uploaded!");
+        titleRef.current.value = '';
+        descriptionRef.current.value = '';
         navigate("/");
     }
     return (
@@ -25,15 +35,16 @@ function Upload() {
                         <img className="upload__img" src={preview} alt="preview img" />
                     </div>
                     <div className='upload__right'>
-                        <form className="upload__form" id="form">
+                        <form className="upload__form" onSubmit={handleSubmit}>
                             <label className="upload__lable" htmlFor="title">TITLE YOUR VIDEO</label>
                             <input
                                 className="upload__input"
                                 type="text"
                                 id="title"
-                                name="tital"
+                                name="title"
                                 placeholder="Add a title to your video"
                                 required
+                                ref={titleRef}
                             />
                             <label className="upload__lable" htmlFor="description">ADD A VIDEO DESCRIPTION</label>
                             <textarea
@@ -43,10 +54,11 @@ function Upload() {
                                 name="description"
                                 placeholder="Add a description to your video"
                                 required
+                                ref={descriptionRef}
                             ></textarea>
                             <hr className='mobile-hiden desktop-hiden' />
                             <div className='upload__buttons'>
-                                <button className="upload__button" onClick={handleSubmit}>PUBLICH</button>
+                                <button className="upload__button" type="submit">PUBLISH</button>
                                 <button className="upload__button upload__button--white">CANCEL</button>
                             </div>
                         </form>
