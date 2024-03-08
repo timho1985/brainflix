@@ -1,29 +1,30 @@
 @use '../../styles/partials/mixins' as *;
 @use '../../styles/partials/variables' as *;
-
-.videos-header {
-    color: $primary-silver;
-    text-align: left;
-    width: 100%;
-    padding: $mobile-padding-before-header
-             $mobile-padding-between-components * 2
-             $mobile-padding-after-header
-             $mobile-padding-between-components * 2;
-
-    @include tablet {
+.container-right {
+    &__header {
+        color: $primary-silver;
+        text-align: left;
+        width: 100%;
         padding: $mobile-padding-before-header
-                $tablet-between-components
-                $mobile-padding-after-header
-                $tablet-between-components;
-    }
-
-    @include desktop {
-        font-size: large;
-        font-weight: 600;
-        padding: $tablet-between-components
-                0
-                $mobile-padding-between-components
-                $mobile-padding-between-components;
+                 $mobile-padding-between-components * 2
+                 $mobile-padding-after-header
+                 $mobile-padding-between-components * 2;
+    
+        @include tablet {
+            padding: $mobile-padding-before-header
+                    $tablet-between-components
+                    $mobile-padding-after-header
+                    $tablet-between-components;
+        }
+    
+        @include desktop {
+            font-size: large;
+            font-weight: 600;
+            padding: $tablet-between-components
+                    0
+                    $mobile-padding-between-components
+                    $mobile-padding-between-components;
+        }
     }
 }
 

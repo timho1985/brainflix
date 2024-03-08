@@ -11,8 +11,8 @@ function NextVideo({selectedVideoDetail, videos}) {
     }
 
     return (
-        <div className='container__right'>
-            <h2 className='videos-header'>NEXT VIDEOS</h2>
+        <div className='container-right'>
+            <h2 className='container-right__header'>NEXT VIDEOS</h2>
             <ul className='videos'>
                 {videos
                 .filter((video) => video.id !== selectedVideoDetail.id)
