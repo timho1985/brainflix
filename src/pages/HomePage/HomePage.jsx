@@ -49,6 +49,7 @@ function HomePage() {
         };
 
         getDetail();
+        window.scrollTo(0, 0);
     }, [videoId, selectedId]);
 
     function handleVideoClick(id) {
