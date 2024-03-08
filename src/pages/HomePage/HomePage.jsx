@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import "./HomePage.scss"
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import Header from '../../components/Header/Header';
 import Comments from '../../components/Comment/Comment.jsx';
 import NextVideo from '../../components/NextVideo/NextVideo.jsx';
@@ -13,6 +13,7 @@ function HomePage() {
     const [videos, setVideos] = useState([]);
     const { videoId } = useParams();
     const api = new BrainflixApi();
+    const navigate = useNavigate();
 
     // Get all movies
     useEffect(() => {
@@ -38,9 +39,13 @@ function HomePage() {
         }
 
         async function getDetail() {
-            const clickedVideoDetail = await api.getVideo(id);
-            clickedVideoDetail.video = clickedVideoDetail.video + "?api_key=" + api.apiKey;
-            setSelectedVideoDetail(clickedVideoDetail);
+            try {
+                const clickedVideoDetail = await api.getVideo(id);
+                clickedVideoDetail.video = clickedVideoDetail.video + "?api_key=" + api.apiKey;
+                setSelectedVideoDetail(clickedVideoDetail);
+            } catch (error) {
+                navigate('/404');
+            }
         };
 
         getDetail();
